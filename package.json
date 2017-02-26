@@ -1,0 +1,24 @@
+{
+  "name": "react-warmup",
+  "version": "0.1.0",
+  "description": "A warm up routine to prepare data-dependent apps for server  rendering",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djgrant/react-warmup.git"
+  },
+  "author": "Daniel Grant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djgrant/react-warmup/issues"
+  },
+  "homepage": "https://github.com/djgrant/react-warmup#readme",
+  "keywords": [
+    "redux",
+    "async",
+    "declarative",
+    "data",
+    "fetching",
+    "ssr"
+  ]
+}
