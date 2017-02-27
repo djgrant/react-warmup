@@ -1,6 +1,6 @@
 {
   "name": "react-warmup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A warm up routine to prepare data-dependent apps for server  rendering",
   "repository": {
     "type": "git",
@@ -21,9 +21,11 @@
     "ssr"
   ],
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "build":"babel index.js --out-dir lib --ignore spec.js,test.js"
+    "build": "babel index.js --out-dir lib --ignore spec.js,test.js"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
