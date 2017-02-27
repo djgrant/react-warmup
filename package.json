@@ -1,6 +1,6 @@
 {
   "name": "react-warmup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A warm up routine to prepare data-dependent apps for server  rendering",
   "repository": {
     "type": "git",
