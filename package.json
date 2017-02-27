@@ -2,7 +2,6 @@
   "name": "react-warmup",
   "version": "0.1.0",
   "description": "A warm up routine to prepare data-dependent apps for server  rendering",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djgrant/react-warmup.git"
@@ -20,5 +19,25 @@
     "data",
     "fetching",
     "ssr"
-  ]
+  ],
+  "main": "lib/index.js",
+  "files": ["lib"],
+  "scripts": {
+    "build":"babel index.js --out-dir lib --ignore spec.js,test.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-jest": "^18.0.0",
+    "babel-loader": "^6.3.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "enzyme": "^2.7.1",
+    "jest": "^18.1.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0"
+  }
 }
