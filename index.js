@@ -33,7 +33,10 @@ async function traverse(element, context = {}) {
       // Call componentWillMount if it exists.
       if (instance.componentWillMount) {
         // If componentWillMount returns a promise wait for it to resolve
-        await instance.componentWillMount();
+        var p = instance.componentWillMount();
+        if (typeof p === 'object' && p.then) {
+          await p;
+        }
       }
 
       // Ensure the child context is initialised if it is available. We will
@@ -60,14 +63,14 @@ async function traverse(element, context = {}) {
   // If the element has children then we will walk them.
   else {
     if (element.props && element.props.children) {
-      return Promise.all(
-        React.Children.map(element.props.children, child => {
-          if (child) {
-            return traverse(child, context);
-          }
-          return;
-        })
-      )
+      // Traverse the children in sequence
+      var p = Promise.resolve();
+      React.Children.forEach(element.props.children, function (child) {
+        if (child) {
+          p = p.then(() => traverse(child, context))
+        }
+      });
+      return p;
     }
   }
 
